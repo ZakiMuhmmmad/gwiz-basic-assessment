@@ -104,7 +104,8 @@ class GPNF_Session {
 	}
 
 	public function get_cookie_name() {
-		$name = implode( '_', array( self::COOKIE_NAME,$this->_form_id));
+	$name = implode( '_', array( self::COOKIE_NAME));
+
 		/**
 		 * Filter the name of the session cookie GPNF uses for a given form
 		 *
@@ -113,8 +114,9 @@ class GPNF_Session {
 		 * @param string $name    Default session cookie name GPNF has generated.
 		 * @param string $form_id Parent form ID that the nested form belongs to.
 		 */
-		return apply_filters( 'gpnf_cookie_name', $name, $this->_form_id);
+	return apply_filters( 'gpnf_cookie_name', $name, $this->_form_id );
 	}
+
 
 	public function delete_cookie() {
 		/**
